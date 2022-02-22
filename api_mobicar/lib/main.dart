@@ -1,6 +1,5 @@
+import 'package:api_mobicar/components/home_page.dart';
 import 'package:flutter/material.dart';
-
-import 'components/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,21 +12,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       theme: ThemeData(
         primaryTextTheme: const TextTheme(
-          headline6: TextStyle(
+          headline3: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 10,
+            letterSpacing: 1,
+            fontSize: 15,
           ),
-          subtitle2: TextStyle()
+          subtitle1: TextStyle(
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1,
+          ),
+          subtitle2: TextStyle(
+            color: Colors.lightBlue,
+          ),
         ),
         colorScheme: const ColorScheme.light(
-          primary: Colors.black,
-          
-        ),
+            primary: Colors.black, secondary: Colors.blueAccent),
       ),
       home: const HomePage(),
+      /* routes: {
+        RoutesPage.Form_Page: (context) => const FormPage(),
+      } */
     );
   }
 }
