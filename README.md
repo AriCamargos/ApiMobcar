@@ -41,7 +41,8 @@ Conceitos como listas, navegação, herança para melhor aproveitamento do códi
 ### Imagem do projeto
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/86811983/155354196-414ae72b-4465-430b-baad-b4f627fa5bd7.jpeg" width="500" >
+<img src="https://user-images.githubusercontent.com/86811983/155394539-2e255b4f-6a38-4aa9-8616-9b6ba67c975f.jpeg" width="500" >
+<img src="https://user-images.githubusercontent.com/86811983/155394688-98feb02f-33c4-4c1c-8ee8-7a2f566f4ae4.jpeg" width="500" >
 </p>
 
 ## 📝 Licença
