@@ -30,13 +30,17 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.black,
         leading: const Icon(Icons.settings),
         title: const Text('Mobcar'),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.fromLTRB(4, 0, 10, 0),
-            child: Icon(
-              Icons.list_outlined,
-            ),
-          ),
+              padding: const EdgeInsets.fromLTRB(4, 0, 10, 0),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/reserved_page');
+                },
+                icon: const Icon(
+                  Icons.list_outlined,
+                ),
+              )),
         ],
       ),
       body: Column(children: [
@@ -110,3 +114,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+

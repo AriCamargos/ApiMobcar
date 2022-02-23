@@ -19,12 +19,15 @@ class InicialCardPage extends StatelessWidget {
                   'Title',
                   style: Theme.of(context).textTheme.headline6,
                 ),
-                const SizedBox(width: 195),
+                const SizedBox(width: 198),
                 IconButton(
                   onPressed: () {
                     Navigator.pop(context, '/form_page');
                   },
-                  icon: const Icon(Icons.close),
+                  icon: const Icon(
+                    Icons.close,
+                    size: 35,
+                  ),
                 ),
               ],
             ),

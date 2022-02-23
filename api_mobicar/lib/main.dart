@@ -16,8 +16,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryTextTheme: const TextTheme(),
-          colorScheme: const ColorScheme.light(
-              primary: Colors.black, secondary: Colors.blueAccent),
+          colorScheme: const ColorScheme.light(primary: Colors.black),
         ),
         initialRoute: '/',
         routes: {
@@ -27,3 +26,5 @@ class MyApp extends StatelessWidget {
         });
   }
 }
+
+

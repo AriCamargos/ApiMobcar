@@ -11,6 +11,27 @@ class FormPage extends StatefulWidget {
 class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
+    Widget _sized15() {
+      return const SizedBox(height: 15);
+    }
+
+    Widget _createSectionTitle(BuildContext context, String title) {
+      return DropdownButtonHideUnderline(
+        child: DropdownButtonFormField(
+            decoration: InputDecoration(
+              labelText: (title),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7),
+              ),
+            ),
+            value: null,
+            isDense: true,
+            items: null,
+            onChanged: null),
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(),
@@ -27,26 +48,23 @@ class _FormPageState extends State<FormPage> {
             child: Column(
               children: [
                 const InicialCardPage(),
-                DropdownButtonFormField(
-                  value: null,
-                  disabledHint: const Text('Marca'),
-                  onChanged: null,
-                  items: dropdownItems,
-                ),
-                DropdownButtonFormField(
-                  value: null,
-                  disabledHint: const Text('Modelo'),
-                  onChanged: null,
-                  items: dropdownItems,
-                ),
-                DropdownButtonFormField(
-                  value: null,
-                  disabledHint: const Text('Ano'),
-                  onChanged: null,
-                  items: dropdownItems,
-                ),
+                _sized15(),
+                _createSectionTitle(context, 'Marca'),
+                _sized15(),
+                _createSectionTitle(context, 'Modelo'),
+                _sized15(),
+                _createSectionTitle(context, 'Ano'),
+                _sized15(),
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Valor (R\$)'),
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelText: 'Valor (R\$)',
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 10),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 15),
                 Row(
@@ -81,12 +99,4 @@ class _FormPageState extends State<FormPage> {
   }
 }
 
-List<DropdownMenuItem<String>> get dropdownItems {
-  List<DropdownMenuItem<String>> menuItems = [
-    const DropdownMenuItem(child: Text("USA"), value: "USA"),
-    const DropdownMenuItem(child: Text("Canada"), value: "Canada"),
-    const DropdownMenuItem(child: Text("Brazil"), value: "Brazil"),
-    const DropdownMenuItem(child: Text("England"), value: "England"),
-  ];
-  return menuItems;
-}
+

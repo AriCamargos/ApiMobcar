@@ -24,30 +24,31 @@ class ReservedPage extends StatelessWidget {
                 const InicialCardPage(),
                 _sizedBox10(),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       'Marca',
-                      style: theme.headline6,
+                      style: theme.subtitle1,
                     ),
+                    const SizedBox(width: 110),
                     Text(
                       'Ano',
-                      style: theme.headline6,
+                      style: theme.subtitle1,
                     ),
                   ],
                 ),
                 _sizedBox10(),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       'Modelo',
-                      style: theme.headline6,
+                      style: theme.subtitle1,
                     ),
+                    const SizedBox(width: 100),
                     Text(
                       'Valor',
-                      style: theme.headline6,
+                      style: theme.subtitle1,
                     ),
                   ],
                 ),
