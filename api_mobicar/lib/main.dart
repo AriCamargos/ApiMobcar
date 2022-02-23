@@ -1,4 +1,6 @@
-import 'package:api_mobicar/components/home_page.dart';
+import 'package:api_mobicar/screens/form_page.dart';
+import 'package:api_mobicar/screens/home_page.dart';
+import 'package:api_mobicar/screens/reserved_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,29 +13,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryTextTheme: const TextTheme(
-          headline3: TextStyle(
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1,
-            fontSize: 15,
-          ),
-          subtitle1: TextStyle(
-            fontWeight: FontWeight.w400,
-            letterSpacing: 1,
-          ),
-          subtitle2: TextStyle(
-            color: Colors.lightBlue,
-          ),
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryTextTheme: const TextTheme(),
+          colorScheme: const ColorScheme.light(
+              primary: Colors.black, secondary: Colors.blueAccent),
         ),
-        colorScheme: const ColorScheme.light(
-            primary: Colors.black, secondary: Colors.blueAccent),
-      ),
-      home: const HomePage(),
-      /* routes: {
-        RoutesPage.Form_Page: (context) => const FormPage(),
-      } */
-    );
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const HomePage(),
+          '/form_page': (context) => const FormPage(),
+          '/reserved_page': (context) => const ReservedPage(),
+        });
   }
 }

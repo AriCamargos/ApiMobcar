@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:api_mobicar/components/information_page.dart';
 import 'package:api_mobicar/components/text_area_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -32,8 +31,11 @@ class _HomePageState extends State<HomePage> {
         leading: const Icon(Icons.settings),
         title: const Text('Mobcar'),
         actions: const [
-          Icon(
-            Icons.list_outlined,
+          Padding(
+            padding: EdgeInsets.fromLTRB(4, 0, 10, 0),
+            child: Icon(
+              Icons.list_outlined,
+            ),
           ),
         ],
       ),
@@ -61,22 +63,21 @@ class _HomePageState extends State<HomePage> {
                             leading: ClipRRect(
                               child: Image.network(
                                 'https://i.pinimg.com/564x/fe/69/ce/fe69ce366dd9539c7727b4f5ba6230a7.jpg',
-                                fit: BoxFit.cover,
+                                fit: BoxFit.fill,
                                 width: 80,
                               ),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             title: Text(marca['nome'],
                                 style: Theme.of(context).textTheme.headline6),
-                            subtitle: Text(marca['codigo']),
+                            subtitle: Text(
+                              marca['codigo'] + '\nView More',
+                              style: const TextStyle(color: Colors.blueGrey),
+                            ),
+                            isThreeLine: true,
                             trailing: const Icon(Icons.more_vert),
                             onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const InformationPage(),
-                                ),
-                              );
+                              Navigator.pushNamed(context, '/reserved_page');
                             },
                           ),
                           const Divider(),

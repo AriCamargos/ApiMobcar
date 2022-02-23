@@ -1,4 +1,4 @@
-import 'package:api_mobicar/components/inicial_card.dart';
+import 'package:api_mobicar/components/inicial_card_page.dart';
 import 'package:flutter/material.dart';
 
 class FormPage extends StatefulWidget {

@@ -2,7 +2,9 @@ import 'package:api_mobicar/screens/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class InicialCardPage extends StatelessWidget {
-  const InicialCardPage({Key? key}) : super(key: key);
+  const InicialCardPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,20 +15,19 @@ class InicialCardPage extends StatelessWidget {
             Row(
               children: [
                 const Icon(Icons.directions_car),
-                Text('Title', style: Theme.of(context).textTheme.headline6),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [],
-                )
+                Text(
+                  'Title',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+                const SizedBox(width: 195),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context, '/form_page');
+                  },
+                  icon: const Icon(Icons.close),
+                ),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: const [
-                Icon(Icons.close),
-              ],
-            )
           ],
         ),
         const SizedBox(
