@@ -28,17 +28,18 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: const Icon(Icons.settings),
-        title: const Text('Mobcar'),
+        title: const Text(
+          'Mobcar',
+          style: TextStyle(color: Colors.blueAccent),
+        ),
         actions: [
           Padding(
               padding: const EdgeInsets.fromLTRB(4, 0, 10, 0),
               child: IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/reserved_page');
-                },
+                onPressed: () {},
                 icon: const Icon(
-                  Icons.list_outlined,
+                  Icons.menu,
+                  color: Colors.blueAccent,
                 ),
               )),
         ],
@@ -114,5 +115,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-

@@ -1,4 +1,5 @@
 import 'package:api_mobicar/screens/form_page.dart';
+import 'package:api_mobicar/screens/home_backgound.dart';
 import 'package:api_mobicar/screens/home_page.dart';
 import 'package:api_mobicar/screens/reserved_page.dart';
 import 'package:flutter/material.dart';
@@ -16,15 +17,17 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryTextTheme: const TextTheme(),
-          colorScheme: const ColorScheme.light(primary: Colors.black),
+          colorScheme: const ColorScheme.light(
+            primary: Colors.black,
+            secondary: Colors.blueAccent,
+          ),
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const HomePage(),
+          '/': (context) => const HomeBackground(),
+          '/home_page': (context) => const HomePage(),
           '/form_page': (context) => const FormPage(),
           '/reserved_page': (context) => const ReservedPage(),
         });
   }
 }
-
-
