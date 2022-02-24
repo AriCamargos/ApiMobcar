@@ -5,20 +5,6 @@ class HomeBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget _nameListDrawer(String title) {
-      return ListTile(
-        title: Text(
-          title,
-          textAlign: TextAlign.end,
-          style: const TextStyle(
-            letterSpacing: 1.5,
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      );
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -27,14 +13,6 @@ class HomeBackground extends StatelessWidget {
         ),
         iconTheme: const IconThemeData(
           color: Colors.blueAccent,
-        ),
-      ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/background1.jpg'),
-            fit: BoxFit.cover,
-          ),
         ),
       ),
       endDrawer: Theme(
@@ -67,6 +45,49 @@ class HomeBackground extends StatelessWidget {
           ),
         ),
       ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/background1.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: containerSubtitle(),
+      ),
     );
   }
+}
+
+containerSubtitle() {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: const [
+      SizedBox(
+        child: Text(
+          '© 2020. All rights reserved to Mobcar',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            color: Colors.lightBlue,
+            fontSize: 17,
+          ),
+        ),
+      ),
+    ],
+  );
+}
+
+Widget _nameListDrawer(String title) {
+  return ListTile(
+    title: Text(
+      title,
+      textAlign: TextAlign.end,
+      style: const TextStyle(
+        letterSpacing: 1.5,
+        color: Colors.white,
+        fontSize: 20,
+      ),
+    ),
+  );
 }
