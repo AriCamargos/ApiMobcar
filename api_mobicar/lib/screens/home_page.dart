@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:api_mobicar/components/custom_drawer.dart';
 import 'package:api_mobicar/components/text_area_page.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -26,23 +27,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const CustomDrawer(),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.blueAccent,
+        ),
         backgroundColor: Colors.black,
         title: const Text(
           'Mobcar',
           style: TextStyle(color: Colors.blueAccent),
         ),
-        actions: [
-          Padding(
-              padding: const EdgeInsets.fromLTRB(4, 0, 10, 0),
-              child: IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.blueAccent,
-                ),
-              )),
-        ],
       ),
       body: Column(children: [
         const TextArea(),
