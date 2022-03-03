@@ -4,6 +4,10 @@ enum Options {
   delet,
 }
 
+class MobCar {
+  final Options options;
+}
+
 String get optionsText {
   switch (options) {
     case Options.view:
