@@ -76,7 +76,8 @@ class _HomePageState extends State<HomePage> {
                             isThreeLine: true,
                             trailing: const Icon(Icons.more_vert),
                             onTap: () {
-                              Navigator.pushNamed(context, '/reserved_page');
+                              /*  Navigator.pushNamed(context, '/reserved_page'); */
+                              OptionsScreens();
                             },
                           ),
                           const Divider(),
